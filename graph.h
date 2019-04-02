@@ -1,12 +1,21 @@
 #include <iostream>
 #include <string>
-class Graph{
+#include <vector>
+
+class Graph {
 public:
-    Graph(int v)
-    Graph(In in)
-    addEdge(int u, int v)
-    adj(int v)
-    int getEdgeNos()
-    int getVertexNos()
-    std::string toString()
+  typedef std::pair<std::vector<int>::iterator, std::vector<int>::iterator>
+      adjIter;
+  Graph(int v);
+  void addEdge(int u, int v);
+  adjIter adj(int v);
+
+  int getEdgeNos();
+  int getVertexNos();
+  void toString();
+
+private:
+  int m_nNodes;
+  int m_nEdges;
+  std::vector<std::vector<int> > m_bag;
 };
